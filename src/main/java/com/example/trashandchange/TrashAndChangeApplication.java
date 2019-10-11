@@ -1,0 +1,13 @@
+package com.example.trashandchange;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TrashAndChangeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TrashAndChangeApplication.class, args);
+	}
+
+}
