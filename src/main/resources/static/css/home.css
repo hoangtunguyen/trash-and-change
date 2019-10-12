@@ -10,6 +10,9 @@
     color: #000000;
     margin: 5px 5px 5px 5px;
 }
+div.card {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+}
 .odd{
     background-color: #52de97;
     color: #000000;
