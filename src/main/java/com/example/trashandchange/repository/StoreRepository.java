@@ -12,5 +12,5 @@ public interface StoreRepository extends JpaRepository<StoreModel,Integer> {
     @Query("select r from #{#entityName} r")
     List<StoreModel> getAllStores();
 
-    List<StoreModel> getAllByNameContainingOrAddressContainingOrHashTagContaining(String name, String address, String hastag);
+    List<StoreModel> findAllByNameContainingOrAddressContainingOrHashTagContaining(String name, String address, String tag);
 }

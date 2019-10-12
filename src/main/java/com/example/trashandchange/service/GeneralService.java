@@ -29,7 +29,7 @@ public class GeneralService {
     }
 
     public List<StoreModel> searchStores(String search){
-        return storeRepository.getAllByNameContainingOrAddressContainingOrHashTagContaining(search,search,search);
+        return storeRepository.findAllByNameContainingOrAddressContainingOrHashTagContaining(search,search,search);
     }
 
 //    public List<ProductModel> getAll

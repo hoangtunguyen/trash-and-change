@@ -46,9 +46,6 @@ public class HomeController {
         return "main/home";
     }
 
-
-
-
     @RequestMapping("/products")
     public String products() {
         return "products";

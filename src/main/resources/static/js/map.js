@@ -1,9 +1,9 @@
 var urlAPI = "10.10.255.176:8080";
-var arrMarker=[];
-var lastClickMarker =  null;
+var arrMarker = [];
+var lastClickMarker = null;
 // var infowindow = null;
 var map;
-$( document ).ready(function() {
+$(document).ready(function () {
     let windowHeight = $(window).outerHeight(true);
     let top_nav = $(".topnav").outerHeight(true);
     let searcHeight = $("#search").outerHeight(true);
@@ -12,25 +12,26 @@ $( document ).ready(function() {
     console.log(heightList);
 
 });
+
 function getStoresInMap() {
 
     setTimeout(() => {
         $.ajax({
-            type : "GET",
+            type: "GET",
             async: false,
-            url : "/getAllStores",
+            url: "/getAllStores",
             contentType: 'application/json',
             mimeType: 'application/json',
-            dataType : 'json',
+            dataType: 'json',
             data: {},
-            success : function(data) {
+            success: function (data) {
                 let i = 0;
                 map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 20,
                     center: {lat: 59.292241, lng: 18.003599}
                 });
 
-                $.each(data,function( key, value ) {
+                $.each(data, function (key, value) {
                     let marker = new google.maps.Marker({
                         map: map,
                         // draggable: true,
@@ -41,7 +42,7 @@ function getStoresInMap() {
                     i++;
                 });
                 map.setCenter({lat: data[0].lat, lng: data[0].lng});
-            },error: function(data){
+            }, error: function (data) {
             },
 
         });
@@ -52,48 +53,60 @@ function initMap() {
     getStoresInMap();
 
 }
-$(function() {
-    $(".container-box .card").on("click", function() {
+
+$(function () {
+    $(".container-box .card").on("click", function () {
         var index = $(this).index();
         toggleBounce(arrMarker[index]);
         map.setCenter(arrMarker[index].getPosition());
 
-        let title =$("#title"+index).text();
-        let name = $("#address"+index).text();
+        let title = $("#title" + index).text();
+        let name = $("#address" + index).text();
+        let id = $("#id" + index).val();
+
         let infor = {
-            "title":title,
-            "name" : name
-        }
-        descriptionStore(map,arrMarker[index],infor);
+            "title": title,
+            "name": name,
+            "id": id
+        };
+        console.log(infor);
+        descriptionStore(map, arrMarker[index], infor);
         $(".container-box").slideToggle();
     });
 
-    $(".form-inline #search").click(function(){
+    $(".form-inline #search").click(function () {
         $(".container-box").slideToggle();
     });
+    $("button.btn-search").click(function () {
+        let txt_search = $("#search").val();
+        console.log("clicked on .btn-search", txt_search);
+        window.location.href = '/searchAll?search=' + txt_search;
+    });
 
-
-
+    $("#content").click(function () {
+        console.log("clicked on .btn-search");
+        // window.location.href = '/searchAll?search=' + txt_search;
+    });
 });
 
 function toggleBounce(marker) {
-    if (lastClickMarker != null){
+    if (lastClickMarker != null) {
         lastClickMarker.setAnimation(null);
         lastClickMarker.infowindow.close();
     }
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-        lastClickMarker = marker;
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    lastClickMarker = marker;
 }
 
-function descriptionStore(map,marker, obJInfor) {
+function descriptionStore(map, marker, obJInfor) {
     let infor = obJInfor;
-    let contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h6 id="firstHeading" class="firstHeading">'+infor["title"]+'</h6>'+
-        '<div id="bodyContent">'+
-        '<p><b>'+infor["name"]+'</b></p>'+
-        '</div>'+
+    let contentString = '<div id="content">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<a href="/detailStore?id=2" id="firstHeading" class="firstHeading">' + infor["title"] + '</a>' +
+        '<div id="bodyContent">' +
+        '<p><b>' + infor["name"] + '</b></p>' +
+        '</div>' +
         '</div>';
 
     marker.infowindow = new google.maps.InfoWindow({
@@ -101,7 +114,6 @@ function descriptionStore(map,marker, obJInfor) {
     });
 
     marker.infowindow.open(map, marker);
-
     lastClickMarker = marker;
 }
 
