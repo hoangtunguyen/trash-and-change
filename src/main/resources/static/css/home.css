@@ -3,7 +3,6 @@
     background-color: #e6e6e6;
     color: #000000;
     margin: 5px 5px 5px 5px;
-
 }
 .card:nth-child(odd) {
     background-color: #ffffff;
