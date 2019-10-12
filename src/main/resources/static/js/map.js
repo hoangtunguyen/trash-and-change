@@ -1,6 +1,7 @@
 var urlAPI = "10.10.255.176:8080";
 var arrMarker=[];
 var lastClickMarker =  null;
+// var infowindow = null;
 var map;
 $( document ).ready(function() {
     let windowHeight = $(window).outerHeight(true);
@@ -25,9 +26,10 @@ function getStoresInMap() {
             success : function(data) {
                 let i = 0;
                 map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 13,
+                    zoom: 20,
                     center: {lat: 59.292241, lng: 18.003599}
                 });
+
                 $.each(data,function( key, value ) {
                     let marker = new google.maps.Marker({
                         map: map,
@@ -36,9 +38,9 @@ function getStoresInMap() {
                         position: {lat: value.lat, lng: value.lng}
                     });
                     arrMarker[i] = marker;
-                    console.log("ALL MARKERS"+arrMarker[i].position);
                     i++;
                 });
+                map.setCenter({lat: data[0].lat, lng: data[0].lng});
             },error: function(data){
             },
 
@@ -54,11 +56,16 @@ $(function() {
     $(".container-box .card").on("click", function() {
         var index = $(this).index();
         toggleBounce(arrMarker[index]);
-        descriptionStore(map,arrMarker[index]);
+        map.setCenter(arrMarker[index].getPosition());
+
+        let title =$("#title"+index).text();
+        let name = $("#address"+index).text();
+        let infor = {
+            "title":title,
+            "name" : name
+        }
+        descriptionStore(map,arrMarker[index],infor);
         $(".container-box").slideToggle();
-
-        console.log("hovered element: " + index);
-
     });
 
     $(".form-inline #search").click(function(){
@@ -72,32 +79,29 @@ $(function() {
 function toggleBounce(marker) {
     if (lastClickMarker != null){
         lastClickMarker.setAnimation(null);
+        lastClickMarker.infowindow.close();
     }
-    if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-        lastClickMarker = null;
-    } else {
         marker.setAnimation(google.maps.Animation.BOUNCE);
         lastClickMarker = marker;
-    }
-
 }
 
-function descriptionStore(map,marker) {
+function descriptionStore(map,marker, obJInfor) {
+    let infor = obJInfor;
     let contentString = '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h6 id="firstHeading" class="firstHeading">Uluru</h6>'+
+        '<h6 id="firstHeading" class="firstHeading">'+infor["title"]+'</h6>'+
         '<div id="bodyContent">'+
-        '<p><b>31 Phan chau trinh, Da Nang</b></p>'+
+        '<p><b>'+infor["name"]+'</b></p>'+
         '</div>'+
         '</div>';
 
-    var infowindow = new google.maps.InfoWindow({
+    marker.infowindow = new google.maps.InfoWindow({
         content: contentString
     });
 
-    infowindow.open(map, marker);
+    marker.infowindow.open(map, marker);
 
+    lastClickMarker = marker;
 }
 

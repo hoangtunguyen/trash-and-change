@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
     <script th:src="@{/js/detailMap.js}"></script>
 </head>
-<body style="width:100%">
+<body style="width:100%" id="detail-body">
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
@@ -53,9 +53,11 @@
 <h5 class="margin_left">Sản phẩm</h5>
 <div class="container-box">
     <th:block th:each="product,state: ${store.getProductResponseList()}">
-    <div class="card even" style="margin:5px;">
+    <div class="card" style="margin:5px;">
     <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
-        <i class="fas fa-wine-bottle" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+        <div class="product-box">
+            <i class="fa fa-shopping-cart fa-cart-format"></i>
+        </div>
         <div class="col">
             <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
             <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
@@ -69,19 +71,7 @@
         </div>
     </div>
 </div>
-<div class="card even" style="margin:5px">
-    <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
-        <i class="fas fa-fish" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
-        <div class="col">
-            <h6 class="card-title" style="margin-bottom: 0px;">Hồ cá</h6>
-            <p class="card-text" style="margin-bottom: 0px;">Được tái chế từ case máy tính để bàn</p>
-            <div class="row" style="margin-left: 2px">
-                <span class="badge badge-warning">máy tính</span>
-                <span class="badge badge-warning margin_left">thủy tinh</span>
-            </div>
-        </div>
-    </div>
-</div>
+
     </th:block>
 </div>
 </div>

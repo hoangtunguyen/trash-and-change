@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StoreConvert {
-    public static final String BLANK = " ";
+    public static final String BLANK = "@";
     public static StoreResponse convert(StoreModel storeModel){
             StoreResponse storeResponse = new StoreResponse();
             storeResponse.setId(storeModel.getId());

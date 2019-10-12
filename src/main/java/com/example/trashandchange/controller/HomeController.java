@@ -33,6 +33,11 @@ public class HomeController {
         model.addAttribute("store",storeResponse);
         return "main/detailStore";
     }
+    @RequestMapping(value = "/user")
+    public String getUser(@RequestParam(value="id", required=true) int id){
+        return "main/userInfor";
+
+    }
     @RequestMapping(value = "/searchAll")
     public String findStore(@RequestParam(value="search", required=true) String search, Model model){
         List<StoreResponse> list = generalService.searchStores(search).stream().map(StoreConvert::convert).collect(Collectors.toList());

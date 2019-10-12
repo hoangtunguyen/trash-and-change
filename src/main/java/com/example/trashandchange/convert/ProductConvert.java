@@ -14,7 +14,7 @@ public class ProductConvert {
         productResponse.setQuantity(productModel.getQuantity());
         productResponse.setPrice(productModel.getPrice());
         productResponse.setGiftPercents(productModel.getGiftPercents());
-        String[] list = productModel.getMainKeyWords().split(" ");
+        String[] list = productModel.getMainKeyWords().split("@");
         productResponse.setMainKeywords(Arrays.asList(list));
         return productResponse;
     }

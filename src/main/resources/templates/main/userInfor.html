@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c29d32ca2b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0_hIYNj_VppfkDzdIAr0E00JQoNNBr70 "></script>
+</head>
+<body>
+<div class="topnav ">
+    <div class="row topnav">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/main.html">Home</a>
+                <a class="dropdown-item" href="#">DIY Tips</a>
+                <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+        </div>
+        <div style="margin-top: 6px; color: white;margin-left: 15%"><h5>User Information</h5></div>
+        <div style="position: absolute; right: 10px; top: 1.5px;">
+            <i class="fas fa-portrait" style="font-size: 36px;" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Điền tên và địa chỉ của người dùng -->
+<div class="row margin_left">
+    <i class="fas fa-user" style="font-size: 36px; margin-top: 0.75rem;"></i>
+    <h4 class="margin_left margin_top" id="userName">Nguyễn Văn A</h4>
+</div>
+<div class="row margin_left" style="border-bottom: 1px solid red;">
+    <i class="fa fa-address-card" style="font-size: 24px; margin-top: 0.75rem;" aria-hidden="true"></i>
+    <p class="margin_left" id="userAddress" style="margin-top: 0.75rem;">31 Trần Phú, Đà Nẵng</p>
+</div>
+
+<!-- Điền số lượng Seed và Total Seed mà user đã đạt được và đã sử dụng -->
+<div class="row margin_left" style="margin-top: 5%;border-bottom: 1px solid red;">
+    <b class="p_left" id="seed">Seed: </b>
+    <p class="p_right" style="position: absolute; right: 70%;" id="seedTotal">2000</p>
+    <b class="p_left" id="seed" style="margin-left: 50%">Total: </b>
+    <p class="p_right" style="position: absolute; left: 80%;" id="seedTotal">5000</p>
+</div>
+<div class="row margin_left">
+
+</div>
+<div class="margin_left margin_top">
+    <h5>Contributing Story</h5>
+</div>
+
+
+</body>
+</html>

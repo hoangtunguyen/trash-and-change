@@ -48,8 +48,8 @@
                 <div class="card-block d-flex flex-row" style="padding: 8px;">
                     <i class="fas fa-store" style="font-size: 24px; color: #00251a; padding: 16px;"></i>
                     <div class="col">
-                        <h6 class="card-title" id="storeName" th:text="${store.getName()}" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
-                        <p class="card-text" id="address" style="margin-bottom: 0px;" th:utext="${store.getAddress()}">31 Trần Phú, Đà Nẵng</p>
+                        <h6 class="card-title" th:id="'title'+${state.index}" th:text="${store.getName()}" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
+                        <p class="card-text" style="margin-bottom: 0px;" th:id="'address'+${state.index}" th:utext="${store.getAddress()}">31 Trần Phú, Đà Nẵng</p>
                         <div class="row">
                             <th:block th:each="tag: ${store.getHashtagList()}">
                                 <div class="col-4 col-sm-1">
