@@ -19,12 +19,11 @@
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle"
-                    style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="/">Home</a>
                 <a class="dropdown-item" href="#">DIY Tips</a>
                 <a class="dropdown-item" href="#">Sign out</a>
             </div>
@@ -58,28 +57,34 @@
 <h5 class="margin_left">Sản phẩm</h5>
 <div class="container-box">
     <th:block th:each="product,state: ${store.getProductResponseList()}">
-        <div class="card" style="margin:5px;">
-            <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
-                <div class="product-box">
-                    <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
+    <div class="card" style="margin:5px;">
+    <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
+        <div class="product-box">
+            <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
+        </div>
+        <div class="col">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6" style="padding-left: 0; padding-right: 0;">
+                    <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
                 </div>
-                <div class="col">
-                    <div class="row" style="margin-left: 0; margin-right: 0;">
-                        <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+                <div class="col-6">
+                    <div class="row">
                         <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
                         <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
                         <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
                         <p style="margin-bottom: 0;">30000</p>
                     </div>
-                    <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ
-                        chai thủy tinh không dùng nữa</p>
-                    <div class="row" style="margin-left: 2px">
-                        <th:block th:each="tag: ${product.getMainKeywords()}">
-                            <span class="badge badge-warning" th:utext="${tag}">máy ảnh</span>
-                            <span class="margin_left"></span>
-                        </th:block>
-                    </div>
                 </div>
+
+            </div>
+            <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
+            <div class="row" style="margin-left: 2px">
+                <th:block th:each="tag: ${product.getMainKeywords()}">
+                    <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
+                    <span class="margin_left"></span>
+                </th:block>
+            </div>
+        </div>
 
             </div>
         </div>
@@ -99,12 +104,10 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="count">Số lượng:</label>
-                        <input type="number" class="form-control" id="count" max="15" min="0"/>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <label for="count">Số lượng:</label>
+                    <input type="text" class="form-control" id="count" />
+                </div>
             </div>
 
             <!-- Modal footer -->
