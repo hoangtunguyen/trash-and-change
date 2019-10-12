@@ -19,18 +19,20 @@
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/main.html">Home</a>
+                <a class="dropdown-item" href="">Home</a>
                 <a class="dropdown-item" href="#">DIY Tips</a>
                 <a class="dropdown-item" href="#">Sign out</a>
             </div>
         </div>
-        <div style="margin-top: 6px; color: white;margin-left: 15%"><h5>User Information</h5></div>
+        <div style="margin-top: 9px; margin-bottom: 9px; color: white; margin-left: 15%"><h5>User Information</h5></div>
         <div style="position: absolute; right: 10px; top: 1.5px;">
-            <i class="fas fa-portrait" style="font-size: 36px;" aria-hidden="true"></i>
+            <a href="/user?id=1">
+                <i class="fas fa-portrait" style="margin-top: 4px; font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </div>
@@ -47,18 +49,18 @@
 
 <!-- Điền số lượng Seed và Total Seed mà user đã đạt được và đã sử dụng -->
 <div class="row margin_left" style="margin-top: 5%;border-bottom: 1px solid red;">
-    <b class="p_left" id="seed">Seed: </b>
-    <p class="p_right" style="position: absolute; right: 70%;" id="seedTotal">2000</p>
-    <b class="p_left" id="seed" style="margin-left: 50%">Total: </b>
+    <b class="p_left">Seed: </b>
+    <p class="p_right" style="position: absolute; right: 70%;" id="seed">2000</p>
+    <b class="p_left" style="margin-left: 50%">Total: </b>
     <p class="p_right" style="position: absolute; left: 80%;" id="seedTotal">5000</p>
 </div>
 <div class="row margin_left">
-
 </div>
 <div class="margin_left margin_top">
     <h5>Contributing Story</h5>
+<!--    <iframe width="80%" height="60%" style="margin-left: 11%;"-->
+<!--            src="https://www.youtube.com/embed/RjnKAWxCK3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>-->
+<!--    </iframe>-->
 </div>
-
-
 </body>
 </html>

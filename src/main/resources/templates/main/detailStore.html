@@ -19,7 +19,7 @@
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu">
@@ -28,10 +28,11 @@
                 <a class="dropdown-item" href="#">Sign out</a>
             </div>
         </div>
-        <div style="margin-top: 6px; color: white;margin-left: 17%"><h5>Store Detail</h5></div>
+        <div style="margin-top: 9px; margin-bottom: 9px; color: white; margin-left: 17%"><h5>Store Detail</h5></div>
         <div style="position: absolute; right: 10px; top: 1.5px;">
-            <i class="fas fa-portrait" style="font-size: 36px;/* position: relative !important; *//* top: 100%; */"
-               aria-hidden="true"></i>
+            <a href="/user?id=1">
+                <i class="fas fa-portrait" style="margin-top: 4px; font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </div>
@@ -56,10 +57,16 @@
     <div class="card" style="margin:5px;">
     <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
         <div class="product-box">
-            <i class="fa fa-shopping-cart fa-cart-format"></i>
+            <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
         </div>
         <div class="col">
-            <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+                <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
+                <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
+                <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
+                <p style="margin-bottom: 0;">30000</p>
+            </div>
             <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
             <div class="row" style="margin-left: 2px">
                 <th:block th:each="tag: ${product.getMainKeywords()}">
@@ -67,13 +74,40 @@
                     <span class="margin_left"></span>
                 </th:block>
             </div>
+        </div>
+
+    </div>
+</div>
+    </th:block>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Đặt hàng</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="count">Số lượng:</label>
+                    <input type="text" class="form-control" id="count" />
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Accept</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
 
         </div>
     </div>
-</div>
-
-    </th:block>
-</div>
 </div>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0_hIYNj_VppfkDzdIAr0E00JQoNNBr70&callback=initMap">

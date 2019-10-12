@@ -40,4 +40,9 @@ html, body {
     overflow-y: auto;
     max-height: 100%;
 }
+.fas.fa-store{
+    font-size: 24px;
+    color: #002266;
+    padding: 16px;
+}
 

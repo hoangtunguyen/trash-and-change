@@ -46,14 +46,14 @@
         <th:block th:each="store,state: ${listStores}">
             <div class="card" th:id="${state}">
                 <div class="card-block d-flex flex-row" style="padding: 8px;">
-                    <i class="fas fa-store" style="font-size: 24px; color: #00251a; padding: 16px;"></i>
+                    <i class="fas fa-store"></i>
                     <div class="col">
                         <h6 class="card-title" th:id="'title'+${state.index}" th:text="${store.getName()}" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
                         <p class="card-text" style="margin-bottom: 0px;" th:id="'address'+${state.index}" th:utext="${store.getAddress()}">31 Trần Phú, Đà Nẵng</p>
                         <div class="row">
                             <th:block th:each="tag: ${store.getHashtagList()}">
                                 <div class="col-4 col-sm-1">
-                                    <p class="border m-0" style="font-size: small; text-align: center;" th:text="${tag}">máy tính</p>
+                                    <p class="border border-dark m-0" style="font-size: small; text-align: center;" th:text="${tag}">máy tính</p>
                                 </div>
                             </th:block>
                         </div>
@@ -63,16 +63,16 @@
         </th:block>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName1" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address1" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
 
@@ -81,16 +81,16 @@
         </div>
         <div class="card odd">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #00251a; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName2" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
                     <p class="card-text" id="address2" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
@@ -98,16 +98,16 @@
         </div>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName12" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address12" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
@@ -115,16 +115,16 @@
         </div>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName1" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address1" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
 
@@ -133,16 +133,16 @@
         </div>
         <div class="card odd">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #00251a; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName2" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
                     <p class="card-text" id="address2" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
@@ -150,16 +150,16 @@
         </div>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName12" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address12" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
@@ -167,16 +167,16 @@
         </div>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName1" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address1" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
 
@@ -185,16 +185,16 @@
         </div>
         <div class="card odd">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #00251a; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName2" style="margin-bottom: 0px;">Cửa hàng ABC</h6>
                     <p class="card-text" id="address2" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
@@ -202,16 +202,16 @@
         </div>
         <div class="card even">
             <div class="card-block d-flex flex-row" style="padding: 8px;">
-                <i class="fas fa-store" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+                <i class="fas fa-store"></i>
                 <div class="col">
                     <h6 class="card-title" id="storeName12" style="margin-bottom: 0px;">Cửa hàng CDE</h6>
                     <p class="card-text" id="address12" style="margin-bottom: 0px;">31 Trần Phú, Đà Nẵng</p>
                     <div class="row">
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy tính</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy tính</p>
                         </div>
                         <div class="col-4 col-sm-1">
-                            <p class="border m-0" style="font-size: small; text-align: center;">máy ảnh</p>
+                            <p class="border border-dark m-0" style="font-size: small; text-align: center;">máy ảnh</p>
                         </div>
                     </div>
                 </div>
