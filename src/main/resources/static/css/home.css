@@ -1,0 +1,41 @@
+
+.card:nth-child(even) {
+    background-color: #f05545;
+    color: #ffffff;
+
+}
+.card:nth-child(odd) {
+    background-color: #e5ffff;
+    color: #000000;
+}
+.odd{
+    background-color: #f05545;
+    color: #ffffff;
+}
+.even{
+    background-color: #e5ffff;
+    color: #000000;
+}
+.topnav{
+    background-color: #007bff;
+    border-color:#007bff;
+    margin-right:0;
+    margin-left:0;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container-box{
+    overflow-y: auto;
+    max-height: 100%;
+}
+

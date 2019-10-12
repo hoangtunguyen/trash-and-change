@@ -1,0 +1,46 @@
+/* .odd{
+    background-color: #f05545;
+    color: #ffffff;
+}
+.even{
+    background-color: #e5ffff;
+    color: #000000;
+} */
+div.card:nth-child(even) {background-color: #f05545;
+    color: #ffffff;}
+div.card:nth-child(odd) {background-color: #e5ffff;
+    color: #000000;}
+.topnav{
+    background-color: #007bff;
+    border-color:#007bff;
+    margin-right:0;
+    margin-left:0;
+}
+.margin_left{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.margin_top{
+    margin-top: 16px;
+}
+.p_right{
+    text-align: right;
+}
+.p_left{
+    text-align: left;
+}
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 100%;
+}
+#map_storeDetail{
+    height: 25%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

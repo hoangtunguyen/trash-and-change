@@ -4,8 +4,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.util.List;
-
 @Entity
 @Table(name = "user")
 @Getter
@@ -28,8 +26,11 @@ public class UserModel {
     @Column(name = "currentAddress")
     String currentAddress;
 
-    @Column(name = "trashSeed")
-    Integer trashSeed;
+    @Column(name = "currentTrashSeed")
+    Integer currentTrashSeed;
+
+    @Column(name = "contributedSeed")
+    Integer contributedSeed;
 
     @Column(name = "historySearch")
     String histTorySearch;

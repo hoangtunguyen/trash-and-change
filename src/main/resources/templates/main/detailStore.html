@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Detail</title>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c29d32ca2b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <script th:src="@{/js/detailMap.js}"></script>
+</head>
+<body style="width:100%">
+<div class="topnav ">
+    <div class="row topnav">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">DIY Tips</a>
+                <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+        </div>
+        <div style="margin-top: 6px; color: white;margin-left: 17%"><h5>Store Detail</h5></div>
+        <div style="position: absolute; right: 10px; top: 1.5px;">
+            <i class="fas fa-portrait" style="font-size: 36px;/* position: relative !important; *//* top: 100%; */"
+               aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+<h4 class="margin_left" style="margin-left:16px; margin-top:16px;" th:utext="${store.getName()}">Cửa hàng ABC</h4>
+<p class="margin_left" th:utext="${store.getAddress()}">31 Trần Phú, Đà Nẵng</p>
+<div class="row margin_left">
+    <th:block th:each="tag: ${store.getHashtagList()}">
+    <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
+    <span class="margin_left"></span>
+    </th:block>
+</div>
+<h5 class="margin_left" style="margin-top:16px;">Mô tả</h5>
+<div class="row" style="margin-top:5px; margin-left:16px; margin-right:16px;" th:utext="${store.getDescription()}">
+    <p>Cửa hàng được thành lập bởi các bạn trẻ yêu môi trường. Bên cạnh chức năng chính là mua bán đồ phế thải, cửa hàng còn bán các sản phẩm được tái chế
+        lại từ mọi thứ mà cửa hàng mua. Ngoài ra cửa hàng còn liên kết với cơ sở phi chính phủ về bảo vệ rừng.</p>
+</div>
+<div id="map_storeDetail" style="margin:16px;"></div>
+
+<h5 class="margin_left">Sản phẩm</h5>
+<div class="container-box">
+    <th:block th:each="product,state: ${store.getProductResponseList()}">
+    <div class="card even" style="margin:5px;">
+    <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
+        <i class="fas fa-wine-bottle" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+        <div class="col">
+            <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+            <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
+            <div class="row" style="margin-left: 2px">
+                <th:block th:each="tag: ${product.getMainKeywords()}">
+                    <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
+                    <span class="margin_left"></span>
+                </th:block>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="card even" style="margin:5px">
+    <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
+        <i class="fas fa-fish" style="font-size: 24px; color: #dc3545; padding: 16px;"></i>
+        <div class="col">
+            <h6 class="card-title" style="margin-bottom: 0px;">Hồ cá</h6>
+            <p class="card-text" style="margin-bottom: 0px;">Được tái chế từ case máy tính để bàn</p>
+            <div class="row" style="margin-left: 2px">
+                <span class="badge badge-warning">máy tính</span>
+                <span class="badge badge-warning margin_left">thủy tinh</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </th:block>
+</div>
+</div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0_hIYNj_VppfkDzdIAr0E00JQoNNBr70&callback=initMap">
+</script>
+</body>
+</html>
