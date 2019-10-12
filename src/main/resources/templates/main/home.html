@@ -21,7 +21,7 @@
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu">
@@ -30,9 +30,9 @@
                 <a class="dropdown-item" href="#">Sign out</a>
             </div>
         </div>
-        <div><p>Trash&Change</p></div>
+        <div style="margin-top: 9px; margin-bottom: 9px; color: white; margin-left: 17%"><h5>Trash&Change</h5></div>
         <div style="position: absolute; right: 10px; top: 1.5px;">
-            <i class="fas fa-portrait" style="font-size: 36px;/* position: relative !important; *//* top: 100%; */" aria-hidden="true"></i>
+            <i class="fas fa-portrait" style="margin-top: 4px; font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;" aria-hidden="true"></i>
         </div>
 
     </div>
@@ -40,7 +40,7 @@
 </div>
 <div class="d-flex flex-column">
     <div class="form-inline">
-        <input type="text" class="form-control" id="search" placeholder="Search..." style="">
+        <input type="text" class="form-control" id="search" placeholder="Search..." style="border-radius: 20px 20px 20px 20px; margin: 5px 5px 0px 5px;">
     </div>
     <div class="container-box">
         <th:block th:each="store,state: ${listStores}">

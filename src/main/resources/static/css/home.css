@@ -1,24 +1,26 @@
 
 .card:nth-child(even) {
-    background-color: #f05545;
-    color: #ffffff;
+    background-color: #e6e6e6;
+    color: #000000;
+    margin: 5px 5px 5px 5px;
 
 }
 .card:nth-child(odd) {
-    background-color: #e5ffff;
+    background-color: #ffffff;
     color: #000000;
+    margin: 5px 5px 5px 5px;
 }
 .odd{
-    background-color: #f05545;
-    color: #ffffff;
+    background-color: #52de97;
+    color: #000000;
 }
 .even{
-    background-color: #e5ffff;
+    background-color: #52de97;
     color: #000000;
 }
 .topnav{
-    background-color: #007bff;
-    border-color:#007bff;
+    background-color: #002266;
+    border-color:#002266;
     margin-right:0;
     margin-left:0;
 }
