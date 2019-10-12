@@ -38,6 +38,7 @@ function getStoresInMap() {
                         animation: google.maps.Animation.DROP,
                         position: {lat: value.lat, lng: value.lng}
                     });
+                    marker.infowindow
                     arrMarker[i] = marker;
                     i++;
                 });
@@ -59,7 +60,7 @@ $(function () {
         var index = $(this).index();
         toggleBounce(arrMarker[index]);
         map.setCenter(arrMarker[index].getPosition());
-
+        map.setZoom(20);
         let title = $("#title" + index).text();
         let name = $("#address" + index).text();
         let id = $("#id" + index).val();

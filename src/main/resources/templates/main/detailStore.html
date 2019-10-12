@@ -19,7 +19,8 @@
 <div class="topnav ">
     <div class="row topnav">
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle"
+                    style="background-color: transparent; border: none; margin-top: 4px;" data-toggle="dropdown">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="dropdown-menu">
@@ -31,7 +32,9 @@
         <div style="margin-top: 9px; margin-bottom: 9px; color: white; margin-left: 17%"><h5>Store Detail</h5></div>
         <div style="position: absolute; right: 10px; top: 1.5px;">
             <a href="/user?id=1">
-                <i class="fas fa-portrait" style="margin-top: 4px; font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;" aria-hidden="true"></i>
+                <i class="fas fa-portrait"
+                   style="margin-top: 4px; font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;"
+                   aria-hidden="true"></i>
             </a>
         </div>
     </div>
@@ -40,13 +43,14 @@
 <p class="margin_left" th:utext="${store.getAddress()}">31 Trần Phú, Đà Nẵng</p>
 <div class="row margin_left">
     <th:block th:each="tag: ${store.getHashtagList()}">
-    <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
-    <span class="margin_left"></span>
+        <span class="badge badge-warning" th:utext="${tag}">máy ảnh</span>
+        <span class="margin_left"></span>
     </th:block>
 </div>
 <h5 class="margin_left" style="margin-top:16px;">Mô tả</h5>
 <div class="row" style="margin-top:5px; margin-left:16px; margin-right:16px;" th:utext="${store.getDescription()}">
-    <p>Cửa hàng được thành lập bởi các bạn trẻ yêu môi trường. Bên cạnh chức năng chính là mua bán đồ phế thải, cửa hàng còn bán các sản phẩm được tái chế
+    <p>Cửa hàng được thành lập bởi các bạn trẻ yêu môi trường. Bên cạnh chức năng chính là mua bán đồ phế thải, cửa hàng
+        còn bán các sản phẩm được tái chế
         lại từ mọi thứ mà cửa hàng mua. Ngoài ra cửa hàng còn liên kết với cơ sở phi chính phủ về bảo vệ rừng.</p>
 </div>
 <div id="map_storeDetail" style="margin:16px;"></div>
@@ -54,30 +58,31 @@
 <h5 class="margin_left">Sản phẩm</h5>
 <div class="container-box">
     <th:block th:each="product,state: ${store.getProductResponseList()}">
-    <div class="card" style="margin:5px;">
-    <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
-        <div class="product-box">
-            <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
-        </div>
-        <div class="col">
-            <div class="row" style="margin-left: 0; margin-right: 0;">
-                <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
-                <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
-                <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
-                <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
-                <p style="margin-bottom: 0;">30000</p>
-            </div>
-            <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
-            <div class="row" style="margin-left: 2px">
-                <th:block th:each="tag: ${product.getMainKeywords()}">
-                    <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
-                    <span class="margin_left"></span>
-                </th:block>
-            </div>
-        </div>
+        <div class="card" style="margin:5px;">
+            <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
+                <div class="product-box">
+                    <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
+                </div>
+                <div class="col">
+                    <div class="row" style="margin-left: 0; margin-right: 0;">
+                        <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+                        <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
+                        <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
+                        <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
+                        <p style="margin-bottom: 0;">30000</p>
+                    </div>
+                    <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ
+                        chai thủy tinh không dùng nữa</p>
+                    <div class="row" style="margin-left: 2px">
+                        <th:block th:each="tag: ${product.getMainKeywords()}">
+                            <span class="badge badge-warning" th:utext="${tag}">máy ảnh</span>
+                            <span class="margin_left"></span>
+                        </th:block>
+                    </div>
+                </div>
 
-    </div>
-</div>
+            </div>
+        </div>
     </th:block>
 </div>
 
@@ -94,10 +99,12 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="count">Số lượng:</label>
-                    <input type="text" class="form-control" id="count" />
-                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="count">Số lượng:</label>
+                        <input type="number" class="form-control" id="count" max="15" min="0"/>
+                    </div>
+                </form>
             </div>
 
             <!-- Modal footer -->
