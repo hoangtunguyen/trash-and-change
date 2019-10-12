@@ -39,28 +39,64 @@
 
 <!-- Điền tên và địa chỉ của người dùng -->
 <div class="row margin_left">
-    <i class="fas fa-user" style="font-size: 36px; margin-top: 0.75rem;"></i>
+    <i class="col-2 fas fa-user" style="font-size: 36px; margin-top: 0.75rem; color: #002266;"></i>
     <h4 class="margin_left margin_top" id="userName">Nguyễn Văn A</h4>
 </div>
 <div class="row margin_left" style="border-bottom: 1px solid red;">
-    <i class="fa fa-address-card" style="font-size: 24px; margin-top: 0.75rem;" aria-hidden="true"></i>
+    <i class="col-2 fa fa-address-card" style="font-size: 24px; margin-top: 0.75rem; color: #002266;" aria-hidden="true"></i>
     <p class="margin_left" id="userAddress" style="margin-top: 0.75rem;">31 Trần Phú, Đà Nẵng</p>
 </div>
 
 <!-- Điền số lượng Seed và Total Seed mà user đã đạt được và đã sử dụng -->
 <div class="row margin_left" style="margin-top: 5%;border-bottom: 1px solid red;">
-    <b class="p_left">Seed: </b>
-    <p class="p_right" style="position: absolute; right: 70%;" id="seed">2000</p>
-    <b class="p_left" style="margin-left: 50%">Total: </b>
-    <p class="p_right" style="position: absolute; left: 80%;" id="seedTotal">5000</p>
+    <div class="col-6">
+        <b class="p_left">Seed: </b>
+        <p class="p_right" style="position: absolute; right: 70%;" id="seed">2000</p>
+    </div>
+    <div class="col-6">
+        <b class="p_left" style="margin-left: 50%">Total: </b>
+        <p class="p_right" style="position: absolute; left: 80%;" id="seedTotal">5000</p>
+    </div>
 </div>
 <div class="row margin_left">
 </div>
+<!-- Thiết lập Contributing Story -->
 <div class="margin_left margin_top">
     <h5>Contributing Story</h5>
-<!--    <iframe width="80%" height="60%" style="margin-left: 11%;"-->
-<!--            src="https://www.youtube.com/embed/RjnKAWxCK3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>-->
-<!--    </iframe>-->
+
+    <!-- Thẻ Card thể hiện: Nơi triển khai, Số hạt giống, Map, Thời gian trồng cây -->
+    <div class="card" style="margin:5px; padding: 8px;">
+        <div class="card-block d-flex flex-row" style="margin:8px;">
+
+            <div class="col" style="padding: 0;">
+                <!-- Nơi triển khai -->
+                <h6 class="card-title" style="margin-bottom: 0px;">
+                    <i class="fa fa-map-marker" style="font-size: 24px; color: #dc3545;"></i>
+                    Vườn quốc gia Cúc Phương - Lô 123A</h6>
+
+                <div class="row" style="margin-left: 2px; margin-right: 2px;display: flex;justify-content: space-between; flex-wrap: nowrap;">
+                    <div class="col-6">
+                        <div class="row">
+                            <p style="margin-bottom: 0;">
+                                <i class="fas fa-seedling" style="margin-right: 4px;"></i>300
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <p style="margin-bottom: 0;">
+                                <i class="fa fa-calendar" aria-hidden="true" style="margin-right: 4px;"></i>30/12/2018
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <img src="https://www.kanepa.co.jp/assets/images/topic/csrtha201507e/image-1.jpg"
+                         style="margin-left: auto; margin-right: auto; margin-top: 8px;"/>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

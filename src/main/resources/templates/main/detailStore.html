@@ -61,11 +61,18 @@
         </div>
         <div class="col">
             <div class="row" style="margin-left: 0; margin-right: 0;">
-                <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
-                <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
-                <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
-                <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
-                <p style="margin-bottom: 0;">30000</p>
+                <div class="col-6" style="padding-left: 0; padding-right: 0;">
+                    <h6 class="card-title" style="margin-bottom: 0px;" th:utext="${product.getName()}">Đèn trần</h6>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
+                        <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
+                        <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
+                        <p style="margin-bottom: 0;">30000</p>
+                    </div>
+                </div>
+
             </div>
             <p class="card-text" style="margin-bottom: 0px;" th:utext="${product.getDescription()}">Được làm từ chai thủy tinh không dùng nữa</p>
             <div class="row" style="margin-left: 2px">
