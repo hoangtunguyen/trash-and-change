@@ -25,7 +25,7 @@
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/">Home</a>
-                <a class="dropdown-item" href="#">DIY Tips</a>
+                <a class="dropdown-item" href="/tip">DIY Tips</a>
                 <a class="dropdown-item" href="#">Sign out</a>
             </div>
         </div>
@@ -37,6 +37,14 @@
                    aria-hidden="true"></i>
             </a>
         </div>
+    </div>
+</div>
+<div class="toast" id="myToast" style="position: fixed; top: 70px; right: 0;">
+    <div class="toast-header" style="background-color: #84efad">
+        <strong class="mr-auto" style="color: white"><i class="fa fa-grav"></i> Đã thanh toán</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 </div>
 <h4 class="margin_left" style="margin-left:16px; margin-top:16px;" th:utext="${store.getName()}">Cửa hàng ABC</h4>
@@ -60,7 +68,7 @@
     <th:block th:each="product,state: ${store.getProductResponseList()}">
         <div class="card" style="margin:5px;">
             <div class="card-block d-flex flex-row" style="padding: 8px; margin:0px">
-                <div class="product-box">
+                <div class="product-box" th:onclick="'fillData('+${product.getId()}+')'">
                     <i class="fa fa-shopping-cart fa-cart-format" data-toggle="modal" data-target="#myModal"></i>
                 </div>
                 <div class="col">
@@ -71,10 +79,10 @@
                         </div>
                         <div class="col-6">
                             <div class="row">
-                                <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 33%;"></i>
-                                <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;">30</p>
+                                <i class="fas fa-seedling" style="margin-top: 4px; margin-left: 20px;"></i>
+                                <p style="margin-top: 0; margin-bottom: 0; margin-right: 8px;" th:utext="${(product.getPrice() * product.getGiftPercents())/10000}">30</p>
                                 <i class="fas fa-dollar-sign" style="margin-top: 4px;"></i>
-                                <p style="margin-bottom: 0;">30000</p>
+                                <p style="margin-bottom: 0;" th:utext="${product.getPrice()}">30000</p>
                             </div>
                         </div>
 
@@ -107,32 +115,27 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="customerName">Tên khách hàng:</label>
-                    <input type="text" class="form-control" id="customerName"/>
-                </div>
-                <div class="form-group">
-                    <label for="customerAddress">Địa chỉ:</label>
-                    <input type="text" class="form-control" id="customerAddress"/>
-                </div>
-                <div class="form-group">
-                    <label for="productName">Tên mặt hàng:</label>
-                    <span class="form-control" id="productName">ABC</span>
+                    <label for="productName">Tên sản phẩm:</label>
+                    <input type="text" readonly class="form-control" id="productName" />
                 </div>
                 <div class="form-group">
                     <label for="count">Số lượng:</label>
-                    <input type="text" class="form-control" id="count"/>
+                    <input type="number" class="form-control" id="count" min="1" max="15"/>
                 </div>
                 <div class="form-group">
                     <label for="totalPrice">Thành tiền:</label>
-                    <span class="form-control" id="totalPrice">150000</span>
+                    <input type="text" readonly class="form-control" id="totalPrice" />
                 </div>
+                <input type="hidden" class="form-control" id="price" />
+
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Thanh toán</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="payProduct()">Thanh toán</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="defaultValue()">Hủy</button>
             </div>
+
         </div>
     </div>
 </div>

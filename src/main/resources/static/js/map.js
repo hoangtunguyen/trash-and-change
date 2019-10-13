@@ -3,6 +3,8 @@ var arrMarker = [];
 var lastClickMarker = null;
 // var infowindow = null;
 var map;
+var curentStoreId;
+
 $(document).ready(function () {
     let windowHeight = $(window).outerHeight(true);
     let top_nav = $(".topnav").outerHeight(true);
@@ -10,7 +12,6 @@ $(document).ready(function () {
     let heightList = windowHeight - top_nav - searcHeight;
     $(".container-box").height(heightList);
     console.log(heightList);
-
 });
 
 function getStoresInMap() {
@@ -64,7 +65,7 @@ $(function () {
         let title = $("#title" + index).text();
         let name = $("#address" + index).text();
         let id = $("#id" + index).val();
-
+        curentStoreId = id;
         let infor = {
             "title": title,
             "name": name,
@@ -104,7 +105,7 @@ function descriptionStore(map, marker, obJInfor) {
     let contentString = '<div id="content">' +
         '<div id="siteNotice">' +
         '</div>' +
-        '<a href="/detailStore?id=2" id="firstHeading" class="firstHeading">' + infor["title"] + '</a>' +
+        '<a href="javascript:openLink()" id="firstHeading" class="firstHeading">' + infor["title"] + '</a>' +
         '<div id="bodyContent">' +
         '<p><b>' + infor["name"] + '</b></p>' +
         '</div>' +
@@ -113,8 +114,10 @@ function descriptionStore(map, marker, obJInfor) {
     marker.infowindow = new google.maps.InfoWindow({
         content: contentString
     });
-
     marker.infowindow.open(map, marker);
     lastClickMarker = marker;
 }
-
+function openLink() {
+    console.log("clicked on .btn-search");
+    window.location.href = '/detailStore?id=' +curentStoreId;
+}
