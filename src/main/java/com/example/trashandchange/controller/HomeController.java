@@ -34,7 +34,9 @@ public class HomeController {
         return "main/detailStore";
     }
     @RequestMapping(value = "/user")
-    public String getUser(@RequestParam(value="id", required=true) int id){
+    public String getUser(@RequestParam(value="id", required=true) int id, Model model){
+        model.addAttribute("user", generalService.getUserById(id));
+
         return "main/userInfor";
     }
     @RequestMapping(value = "/searchAll")
@@ -45,9 +47,9 @@ public class HomeController {
         return "main/home";
     }
 
-    @RequestMapping("/products")
-    public String products() {
-        return "products";
+    @RequestMapping("/tip")
+    public String tip() {
+        return "main/diyTips";
     }
 
     @RequestMapping("/about")

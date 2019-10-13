@@ -1,7 +1,10 @@
 package com.example.trashandchange.controller;
 
+import com.example.trashandchange.convert.ProductConvert;
 import com.example.trashandchange.convert.StoreConvert;
+import com.example.trashandchange.model.ProductModel;
 import com.example.trashandchange.model.StoreModel;
+import com.example.trashandchange.response.ProductResponse;
 import com.example.trashandchange.response.StoreResponse;
 import com.example.trashandchange.service.GeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,21 +34,17 @@ public class HomeRestController {
         return storeResponse;
     }
 
-//    @RequestMapping(value = "/searchAllRest")
-//    public List<StoreResponse> findStore(@RequestParam(value="search", required=true) String search){
-//        List<StoreResponse> list =  generalService.getAllStores().stream().map(StoreConvert::convert).collect(Collectors.toList());
-//        List<StoreResponse> result= new ArrayList<>();
-//        for (StoreResponse storeResponse : list){
-//            if (storeResponse.getName().contains(search)){
-//                result.add(storeResponse);
-//            }
-//        }
-//        return result;
-//    }
+    @RequestMapping(value = "/getInforProduct")
+    public ProductResponse findProduct(@RequestParam(value="id", required=true) int id){
+        ProductResponse productResponse = ProductConvert.convert(generalService.findProductByID(id));
+        return productResponse;
+    }
+
     @RequestMapping(value = "/searchAllRest")
     public List<StoreResponse> findStore(@RequestParam(value="search", required=true) String search){
 
         return generalService.searchStores(search).stream().map(StoreConvert::convert).collect(Collectors.toList());
     }
+
 
 }

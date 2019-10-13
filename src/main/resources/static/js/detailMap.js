@@ -27,3 +27,38 @@ function initMap() {
         });
     }, 100);
 }
+
+function fillData(id){
+        $.ajax({
+            type : "GET",
+            async: false,
+            url : "/getInforProduct?id="+id,
+            contentType: 'application/json',
+            mimeType: 'application/json',
+            dataType : 'json',
+            data: {},
+            success : function(data) {
+                $("#productName").val(data["name"]);
+                $("#price").val(data["price"]);
+                console.log(data.name);
+            },error: function(data){
+            },
+
+        });
+}
+$(function () {
+    $("#count").keyup(function () {
+        let number = $("#count").val();
+        let price = $("#price").val();
+        let totalPrice = number*price;
+        $("#totalPrice").val(totalPrice);
+
+    });
+});
+function payProduct() {
+    $("#myToast").toast('show');
+}
+function defaultValue(){
+    $("#count").val("");
+    $("#totalPrice").val("");
+}
