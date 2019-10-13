@@ -56,9 +56,30 @@ $(function () {
     });
 });
 function payProduct() {
+    // saveUser(1);
     $("#myToast").toast('show');
 }
 function defaultValue(){
     $("#count").val("");
     $("#totalPrice").val("");
 }
+// function saveUser(id){
+//     $.ajax({
+//         type : "GET",
+//         async: false,
+//         url : "/payProduct?id="+id,
+//         contentType: 'application/json',
+//         mimeType: 'application/json',
+//         dataType : 'json',
+//         data: {
+//             "seed":
+//         },
+//         success : function(data) {
+//             $("#productName").val(data["name"]);
+//             $("#price").val(data["price"]);
+//             console.log(data.name);
+//         },error: function(data){
+//         },
+//
+//     });
+// }

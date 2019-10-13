@@ -34,8 +34,7 @@
         <div style="position: absolute; right: 10px; top: 2px;">
             <i class="fas fa-portrait" style="font-size: 36px; background-color: transparent; color: #ffffff; margin-top: 6px;" aria-hidden="true"></i>
         </div>
-
-++    </div>
+    </div>
 
 </div>
 <div class="d-flex flex-column">
@@ -45,7 +44,8 @@
     </div>
     <div class="container-box" th:fragment="datalist">
         <th:block th:each="store,state: ${listStores}">
-            <div class="card" th:id="${state}">
+            <div class="card" th:id="card+${state.index}">
+                <input type="hidden" th:id="count+${state.index}" th:value="${state.size}">
                 <div class="card-block d-flex flex-row" style="padding: 8px;">
                     <i class="fas fa-store"></i>
                     <div class="col">
@@ -56,7 +56,7 @@
                             <th:block th:each="tag: ${store.getHashtagList()}">
                                 <div class="col-4 col-sm-1">
                                     <span class="badge badge-warning" th:utext="${tag}" >máy ảnh</span>
-+ +                               </div>
+                                </div>
                             </th:block>
                         </div>
                     </div>

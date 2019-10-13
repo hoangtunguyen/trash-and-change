@@ -40,7 +40,7 @@
 <!-- Điền tên và địa chỉ của người dùng -->
 <div class="row margin_left">
     <i class="col-2 fas fa-user" style="font-size: 26px; margin-top: 0.75rem; color: #002266;"></i>
-    <h5 class="margin_left margin_top" id="userName">Nguyễn Văn A</h5>
+    <h5 class="margin_left margin_top" id="userName" th:utext="${user.getName()}">Nguyễn Văn A</h5>
 </div>
 <div class="row margin_left">
     <i class="col-2 fa fa-address-card" style="font-size: 24px; margin-top: 0.75rem; color: #002266;" aria-hidden="true"></i>
@@ -49,8 +49,8 @@
 
 <!-- Điền số lượng Seed và Total Seed mà user đã đạt được và đã sử dụng -->
 <div class="row margin_left" style="margin-top: 5%">
-        <p class="col-6" >Seed: <span class="font-w-600">300</span></p>
-        <p class="col-6">Total: <span class="font-w-600">2000</span></p>
+<!--        <p class="col-6" >Seed: <span class="font-w-600" th:utext="${user.getCurrentTrashSeed()}">300</span></p>-->
+        <p class="col-6">Contributed: <span class="font-w-600" th:utext="${user.getContributedSeed()}">2000</span></p>
 </div>
 <div class="row margin_left">
 </div>

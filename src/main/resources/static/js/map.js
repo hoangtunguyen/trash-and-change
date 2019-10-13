@@ -1,4 +1,4 @@
-var urlAPI = "10.10.255.176:8080";
+var urlAPI = "10.20.255.130:8080";
 var arrMarker = [];
 var lastClickMarker = null;
 // var infowindow = null;
@@ -10,8 +10,10 @@ $(document).ready(function () {
     let top_nav = $(".topnav").outerHeight(true);
     let searcHeight = $("#search").outerHeight(true);
     let heightList = windowHeight - top_nav - searcHeight;
-    $(".container-box").height(heightList);
-    console.log(heightList);
+    let heightCard = $("#card0").outerHeight(true);
+    let num = $("#count0").val();
+    let totalHeight = num*heightCard;
+    $(".container-box").height(heightList >totalHeight ? totalHeight:heightList);
 });
 
 function getStoresInMap() {

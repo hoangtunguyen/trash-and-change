@@ -44,4 +44,7 @@ public class GeneralService {
     public void saveProduct(ProductModel productModel){
          productRepository.save(productModel);
     }
+    public void saveUser(UserModel userModel){
+        userRespository.save(userModel);
+    }
 }
